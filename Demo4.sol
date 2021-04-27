@@ -10,13 +10,18 @@ contract Demo4 {
         members[2]=6;
         members[3]=8;
         members[4]=10;
-        members.push(100);
-        
+        members.push(5050);
     }
     function arrayTest6()public  view returns(uint256) {
         return members[0];
     }
     function arrayTest7()public view returns(uint256) {
         return members[5];
+    }
+    function arrayTest8()public view returns(uint256) {
+        return members[10];
+    }
+    function arrayTest9() public view returns(uint256[] memory) {
+        return members;
     }
 }
