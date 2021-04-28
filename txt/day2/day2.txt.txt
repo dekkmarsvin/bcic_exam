@@ -1,0 +1,369 @@
+﻿http://git-scm.com/
+
+git bash
+
+ps
+
+ps -ef
+
+git --version
+git config
+
+git config --global user.name "Mark Ho"
+git config --global user.email "mark@uuu.com"
+
+cat ~/.gitconfig
+
+https://remix.ethereum.org/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Chat {
+    string public message;
+    // constructor 建構子
+    /*
+    comment1
+    comment2
+    commnet3
+    */
+    constructor(string memory initialMessage)  {
+        message = initialMessage;
+    }
+    function setMessage(string memory newMessage) public  {
+        message = newMessage;
+    }
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+    
+}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo3 {
+    function arrayTest1() public pure returns (uint256) {
+        uint8 len = 7;
+        uint256[] memory a = new uint256[](len);
+        return a.length;
+    }
+    function arrayTest2() public pure returns(uint256) {
+        uint8 len = 8;
+        bytes memory b = new bytes(len);
+        return b.length;
+    }
+    function arrayTest3() public pure returns(uint256) {
+        uint8 len = 9;
+        byte[] memory b = new byte[](len);
+        return b.length;
+    }
+    function arrayTest4() public pure returns(uint256) {
+        uint8 len = 7;
+        uint8[] memory a = new uint8[](len);
+        a[0] = 5;
+        a[1] = 10;
+        a[6] = 50;
+        //a.push(12);
+        return a[0];
+    }
+    function arrayTest5() public pure returns(uint256) {
+        uint8 len = 7;
+        uint8[] memory a = new uint8[](len);
+        a[0] = 5;
+        a[1] = 10;
+        a[7] = 40;
+        //a.push(12);
+        return a[7];
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~
+VS Code, 
+demo1, demo2, demo3
+
+git log
+
+git graph
+
+demo4.sol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo4 {
+    uint256[] members = new uint256[](10);
+    function arrayTest5() public {
+        members[0]=2;
+        members[1]=4;
+        members[2]=6;
+        members[3]=8;
+        members[4]=10;
+        members.push(100);
+        
+    }
+    function arrayTest6()public  view returns(uint256) {
+        return members[0];
+    }
+    function arrayTest7()public view returns(uint256) {
+        return members[5];
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo4 {
+    uint256[] members = new uint256[](10);
+    function arrayTest5() public {
+        members[0]=2;
+        members[1]=4;
+        members[2]=6;
+        members[3]=8;
+        members[4]=10;
+        members.push(100);
+        
+    }
+    function arrayTest6()public  view returns(uint256) {
+        return members[0];
+    }
+    function arrayTest7()public view returns(uint256) {
+        return members[5];
+    }
+    function arrayTest8()public view returns(uint256) {
+        return members[10];
+    }
+}
+~~~~~~~~~~~~~~~~~~
+加在原本的陣列的最後面再加一個
+所以維度會改變
+~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo4 {
+    uint256[] members = new uint256[](10);
+    function arrayTest5() public {
+        members[0]=2;
+        members[1]=4;
+        members[2]=6;
+        members[3]=8;
+        members[4]=10;
+        members.push(100);
+        
+    }
+    function arrayTest6()public  view returns(uint256) {
+        return members[0];
+    }
+    function arrayTest7()public view returns(uint256) {
+        return members[5];
+    }
+    function arrayTest8()public view returns(uint256) {
+        return members[10];
+    }
+    function arrayTest9() public view returns(uint256[] memory) {
+        return members;
+    }
+}
+
+
+    function arrayTest9() public view returns(uint256[] memory) {
+        return members;
+    }
+
+
+demo5.sol
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo5 {
+    enum StarbucksSize {SHORT, TALL, GRANDE, VENTI, TRENTA}
+    StarbucksSize size;
+    StarbucksSize constant defaultSize = StarbucksSize.TALL;
+    function setVenti() public {
+        size = StarbucksSize.VENTI;
+    }
+    function getCurrentSize() public view returns (StarbucksSize) {
+        return size;
+    }
+    function getDefaultSize()public pure returns (StarbucksSize) {
+        return defaultSize;
+    }
+    function getDefaultSize2() public pure returns (uint256) {
+        return uint256(defaultSize);
+    }
+}
+
+
+demo6.sol
+
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+pragma experimental ABIEncoderV2;
+contract Demo6 {
+    struct Course {
+        string id;
+        string name;
+        uint256 duration;
+    }
+    Course currentCourse;
+    function setCourse() public {
+        currentCourse = Course("Poop","python OOP",35);
+    }
+    function getCourseId() public view returns (string memory) {
+        return currentCourse.id;
+    }
+    function getCourse() public view returns (Course memory) {
+        return currentCourse;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo7 {
+    mapping(address => uint256) public balances;
+    function updateBalance(uint newBanace) public {
+        balances[msg.sender] = newBanace;
+    }
+    function getBalance() public view returns (uint256) {
+        return balances[address(this)];
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo7 {
+    mapping(address => uint256) public balances;
+    constructor() {
+        balances[address(this)]=5000;
+    }
+
+    function updateBalance(uint newBanace) public {
+        balances[msg.sender] = newBanace;
+    }
+    function getBalance() public view returns (uint256) {
+        return balances[address(this)];
+    }
+}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://docs.soliditylang.org/en/v0.8.4/types.html
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Dmeo8 {
+    function getMuliple1() public pure returns (uint256, uint256) {
+        uint256 a= 3;
+        uint256 b= 4;
+        uint256 product = a*b;
+        uint256 sum = a+b;
+        return (product, sum);
+    }
+    function getMultiple2() public pure returns(uint256 product, uint256 sum) {
+        uint256 a= 4;
+        uint256 b= 5;
+        product = a*b;
+        sum = a+b;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo9 {
+    address public owner;
+    constructor() {
+        owner = msg.sender;
+    }
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+    modifier costs(uint256 price) {
+        if (msg.value >= price){
+            _;
+        }
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo9 {
+    address public owner;
+    constructor() {
+        owner = msg.sender;
+    }
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+    modifier costs(uint256 price) {
+        if (msg.value >= price){
+            _;
+        }
+    }
+}
+
+contract Register is Demo9 {
+    mapping(address=>bool) public registeredAddress;
+    uint256 public price;
+    constructor(uint256 initPrice) {
+        price = initPrice;
+    }
+    function changePrice(uint256 _price) public {
+        price = _price;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract Demo9 {
+    address public owner;
+    constructor() {
+        owner = msg.sender;
+    }
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+    modifier costs(uint256 price) {
+        if (msg.value >= price){
+            _;
+        }
+    }
+}
+
+contract Register is Demo9 {
+    mapping(address=>bool) public registeredAddress;
+    uint256 public price;
+    constructor(uint256 initPrice) {
+        price = initPrice;
+    }
+    function changePrice(uint256 _price) public onlyOwner {
+        price = _price;
+    }
+}

@@ -1,0 +1,103 @@
+BCIC day1
+
+https://github.com/
+
+https://www.openssl.org/news/newslog.html
+
+
+https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.1+commit.df193b15.js
+
+make a direcotry:
+
+BCIC0426
+
+ctrl+K, O
+
+
+// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: UNLICENSED
+
+demo1.sol
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract chat {
+    string public message;
+    constructor(string memory initialMessage) {
+        message = initialMessage;
+    }
+    function setMessage(string memory newMessage) public  {
+        message = newMessage;
+    }
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+    
+}~~~~~~
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.5.4;
+
+contract chat {
+    string public message;
+    constructor(string memory initialMessage) public {
+        message = initialMessage;
+    }
+    function setMessage(string memory newMessage) public  {
+        message = newMessage;
+    }
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+    
+}~~~~~~~~~~~~~~~~~~~~~
+
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract chat {
+    string public message;
+    constructor(string memory initialMessage)  {
+        message = initialMessage;
+    }
+    function setMessage(string memory newMessage) public  {
+        message = newMessage;
+    }
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+    
+}
+
+建構子
+~~~~~~~~~~~~~~~~~~
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.7.4;
+
+contract chat {
+    string public message;
+    // constructor 建構子
+    /*
+    comment1
+    comment2
+    commnet3
+    */
+    constructor(string memory initialMessage)  {
+        message = initialMessage;
+    }
+    function setMessage(string memory newMessage) public  {
+        message = newMessage;
+    }
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+    
+}
+
+https://docs.soliditylang.org/en/v0.5.3/units-and-global-variables.html
